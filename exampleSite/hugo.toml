@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://hw4090-create.github.io/archive-theme-hugo/"
 title = "A Gauge of the Forgotten Past"
 theme = "archive-theme"
 
