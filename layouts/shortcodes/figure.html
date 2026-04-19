@@ -1,0 +1,31 @@
+{{/*
+  Figure shortcode — centered, sized, optional caption.
+
+  Usage in Markdown:
+    {{</* figure src="/images/photo.jpg" caption="A short caption" */>}}
+    {{</* figure src="/images/wide.jpg" size="large" */>}}
+    {{</* figure src="/images/small.jpg" size="small" alt="description" */>}}
+
+  Parameters:
+    src     (required) — image path
+    caption            — caption under the image
+    alt                — alt text (defaults to caption)
+    size               — small (320px) / medium (560px, default) / large (prose-max) / wide (up to 960px)
+    link               — wrap image in a link to this URL
+*/}}
+{{ $src := .Get "src" }}
+{{ if not $src }}
+  {{ errorf "figure shortcode: 'src' is required (%s)" .Position }}
+{{ end }}
+
+{{ $caption := .Get "caption" }}
+{{ $alt := .Get "alt" | default $caption | default "" }}
+{{ $size := .Get "size" | default "medium" }}
+{{ $link := .Get "link" }}
+
+<figure class="{{ $size }}">
+  {{ with $link }}<a href="{{ . | relURL }}">{{ end }}
+    <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy">
+  {{ with $link }}</a>{{ end }}
+  {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

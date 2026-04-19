@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+{{/* Body content from _index.md */}}
+{{ with .Content }}
+  <article class="prose">{{ . }}</article>
+{{ end }}
+
+{{/* If this is the Collection section, render the card grid */}}
+{{ if eq .Section "collection" }}
+  {{ $items := .RegularPages }}
+  {{ if $items }}
+    <div style="margin-top: {{ if .Content }}40px{{ else }}0{{ end }};">
+      {{ partial "collection-grid.html" $items }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{ end }}

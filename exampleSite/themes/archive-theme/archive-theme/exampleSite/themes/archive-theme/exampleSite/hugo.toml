@@ -1,0 +1,85 @@
+baseURL = "/"
+title = "A Gauge of the Forgotten Past"
+theme = "archive-theme"
+
+# Multilingual: filename-based (no contentDir anywhere)
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# ─── Languages ───────────────────────────────────────
+[languages]
+  [languages.en]
+    languageName = "EN"
+    weight = 1
+    title = "A Gauge of the Forgotten Past"
+  [languages.zh]
+    languageName = "中文"
+    weight = 2
+    title = "被遗忘的规格"
+
+# ─── Per-language main menus ─────────────────────────
+[languages.en.menus]
+  [[languages.en.menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 10
+  [[languages.en.menus.main]]
+    name = "History"
+    pageRef = "/history"
+    weight = 20
+  [[languages.en.menus.main]]
+    name = "Collection"
+    pageRef = "/collection"
+    weight = 30
+  [[languages.en.menus.main]]
+    name = "Access and Rights"
+    pageRef = "/access"
+    weight = 40
+  [[languages.en.menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 50
+
+[languages.zh.menus]
+  [[languages.zh.menus.main]]
+    name = "关于"
+    pageRef = "/about"
+    weight = 10
+  [[languages.zh.menus.main]]
+    name = "历史"
+    pageRef = "/history"
+    weight = 20
+  [[languages.zh.menus.main]]
+    name = "收藏"
+    pageRef = "/collection"
+    weight = 30
+  [[languages.zh.menus.main]]
+    name = "访问与版权"
+    pageRef = "/access"
+    weight = 40
+  [[languages.zh.menus.main]]
+    name = "联系"
+    pageRef = "/contact"
+    weight = 50
+
+# ─── Theme params ────────────────────────────────────
+[params]
+  # Default banner image applied to every page (override per-page with
+  # `banner_image` in that page's front matter). Omit or leave empty to
+  # use the solid fallback color.
+  banner_image = "/images/banner-default.svg"
+
+  # Show a "Recent additions" grid on the home page?
+  showRecentOnHome = true
+
+  # Author / org name, shown in footer
+  author = "Archive Project"
+
+# ─── Markdown ────────────────────────────────────────
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true   # allow raw HTML in markdown
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3

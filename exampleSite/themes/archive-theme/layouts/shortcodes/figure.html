@@ -1,0 +1,9 @@
+{{ $src := .Get "src" }}
+{{ $caption := .Get "caption" }}
+{{ $alt := .Get "alt" | default $caption | default "" }}
+{{ $size := .Get "size" | default "medium" }}
+
+<figure class="figure {{ $size }}">
+  <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy">
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

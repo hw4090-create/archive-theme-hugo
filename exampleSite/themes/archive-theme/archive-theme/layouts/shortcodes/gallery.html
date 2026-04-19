@@ -1,0 +1,29 @@
+{{/*
+  Gallery shortcode — a square grid of images.
+
+  Usage in Markdown (inner text, one image path per line):
+
+    {{</* gallery */>}}
+    /images/still-1.jpg
+    /images/still-2.jpg
+    /images/still-3.jpg
+    /images/still-4.jpg
+    {{</* /gallery */>}}
+
+  Or with pipe-separated alt text:
+    /images/still-1.jpg|First still
+    /images/still-2.jpg|Second still
+*/}}
+<div class="gallery">
+  {{ $lines := split (trim .Inner "\n ") "\n" }}
+  {{ range $lines }}
+    {{ $line := trim . " \t" }}
+    {{ if $line }}
+      {{ $parts := split $line "|" }}
+      {{ $src := index $parts 0 | trim " \t" }}
+      {{ $alt := "" }}
+      {{ if gt (len $parts) 1 }}{{ $alt = index $parts 1 | trim " \t" }}{{ end }}
+      <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy">
+    {{ end }}
+  {{ end }}
+</div>

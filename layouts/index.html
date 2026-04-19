@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+{{/* Body content from content/_index.{lang}.md */}}
+{{ with .Content }}
+  <article class="prose">{{ . }}</article>
+{{ end }}
+
+{{/* Optional: show a preview of recent collection items on the home page.
+    Toggle with: [params] showRecentOnHome = true   */}}
+{{ if site.Params.showRecentOnHome }}
+  {{ $collection := site.GetPage "/collection" }}
+  {{ with $collection }}
+    {{ $items := .RegularPages }}
+    {{ if $items }}
+      <section style="margin-top: 56px;">
+        <h2 style="font-size: 22px; font-weight: 600; margin-bottom: 24px;">
+          {{ i18n "recent_additions" | default "Recent additions" }}
+        </h2>
+        {{ partial "collection-grid.html" (first 6 $items) }}
+      </section>
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ end }}

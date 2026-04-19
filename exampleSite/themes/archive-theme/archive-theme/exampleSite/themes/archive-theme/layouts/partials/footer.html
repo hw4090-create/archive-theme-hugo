@@ -1,0 +1,6 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>{{ i18n "footer_tagline" | default site.Title }}</div>
+    <div>© {{ now.Year }}{{ with site.Params.author }} · {{ . }}{{ end }}</div>
+  </div>
+</footer>

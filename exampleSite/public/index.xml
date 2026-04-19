@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Gauge of the Forgotten Past</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on A Gauge of the Forgotten Past</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sample Film One</title>
+      <link>//localhost:1313/collection/sample-film-one/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/collection/sample-film-one/</guid>
+      <description>&lt;p&gt;A compilation documentary highlighting infrastructure and agriculture projects in the early 1970s. This sample entry demonstrates how the metadata table and prose description appear on a single collection page.&lt;/p&gt;&#xA;&lt;h2 id=&#34;provenance&#34;&gt;Provenance&lt;/h2&gt;&#xA;&lt;p&gt;Acquired by donation, 2021. This field documents where the print came from and its custodial history.&lt;/p&gt;&#xA;&lt;h2 id=&#34;interpretive-note&#34;&gt;Interpretive note&lt;/h2&gt;&#xA;&lt;p&gt;Use this section for short scholarly or curatorial commentary — what the film reveals about circulation, audience, or historical context.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure class=&#34;figure medium&#34;&gt;&#xA;  &lt;img src=&#34;//localhost:1313/images/sample-still.svg&#34; alt=&#34;A still from the film.&#34; loading=&#34;lazy&#34;&gt;&#xA;  &lt;figcaption&gt;A still from the film.&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;h2 id=&#34;condition&#34;&gt;Condition&lt;/h2&gt;&#xA;&lt;p&gt;Reel 1 is in excellent condition. Reel 2 has a visible heat-damaged section approximately 2 minutes in. Splices at head and tail are intact.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sample Film Two</title>
+      <link>//localhost:1313/collection/sample-film-two/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/collection/sample-film-two/</guid>
+      <description>&lt;p&gt;A short newsreel produced in 1976 — typical of the newsreel-style shorts distributed to rural projection teams during this period.&lt;/p&gt;&#xA;&lt;h2 id=&#34;provenance&#34;&gt;Provenance&lt;/h2&gt;&#xA;&lt;p&gt;Donated by a former rural projectionist, 2019.&lt;/p&gt;&#xA;&lt;h2 id=&#34;interpretive-note&#34;&gt;Interpretive note&lt;/h2&gt;&#xA;&lt;p&gt;Brief newsreels like this one were designed to lead into longer programs at mobile projection events. They circulated quickly and were often retained on the reel shelf for reuse across multiple screenings.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

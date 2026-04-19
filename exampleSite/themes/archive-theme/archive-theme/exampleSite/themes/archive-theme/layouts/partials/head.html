@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  {{- if .IsHome -}}
+    {{ site.Title }}
+  {{- else -}}
+    {{ .Title }} — {{ site.Title }}
+  {{- end -}}
+</title>
+{{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+<meta name="generator" content="Hugo {{ hugo.Version }}">
+
+{{/* Google Fonts */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+{{/* Main theme CSS */}}
+{{ with resources.Get "css/main.css" }}
+  {{ $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
+
+{{/* Optional user override: site-root/assets/css/custom.css */}}
+{{ with resources.Get "css/custom.css" }}
+  {{ $custom := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}">
+{{ end }}

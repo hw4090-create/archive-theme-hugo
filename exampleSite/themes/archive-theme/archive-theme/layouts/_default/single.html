@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+<article class="prose">
+
+  {{/* Local video player for collection items with a `video` front-matter field */}}
+  {{ with .Params.video }}
+    <div class="video">
+      <video controls{{ with $.Params.poster }} poster="{{ . | relURL }}"{{ end }} preload="metadata">
+        <source src="{{ . | relURL }}" type="{{ $.Params.video_type | default "video/mp4" }}">
+        {{ i18n "video_unsupported" | default "Your browser does not support embedded video." }}
+      </video>
+    </div>
+  {{ end }}
+
+  {{/* Metadata table - only shows fields that are actually filled in */}}
+  {{ $fields := slice "year" "genre" "gauge" "color" "sound" "duration" "condition" "access" "format" }}
+  {{ $hasAny := false }}
+  {{ range $fields }}
+    {{ if index $.Params . }}{{ $hasAny = true }}{{ end }}
+  {{ end }}
+  {{ if $hasAny }}
+    <dl class="meta-table">
+      {{ with .Params.year }}     <dt>{{ i18n "meta_year" }}</dt>     <dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.genre }}    <dt>{{ i18n "meta_genre" }}</dt>    <dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.gauge }}    <dt>{{ i18n "meta_gauge" }}</dt>    <dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.format }}   <dt>{{ i18n "meta_format" }}</dt>   <dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.color }}    <dt>{{ i18n "meta_color" }}</dt>    <dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.sound }}    <dt>{{ i18n "meta_sound" }}</dt>    <dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.duration }} <dt>{{ i18n "meta_duration" }}</dt> <dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.condition }}<dt>{{ i18n "meta_condition" }}</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.access }}   <dt>{{ i18n "meta_access" }}</dt>   <dd>{{ . }}</dd>{{ end }}
+    </dl>
+  {{ end }}
+
+  {{ .Content }}
+
+</article>
+
+{{ end }}

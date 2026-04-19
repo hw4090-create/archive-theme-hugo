@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>收藏 on 被遗忘的规格</title>
+    <link>//localhost:1313/zh/collection/</link>
+    <description>Recent content in 收藏 on 被遗忘的规格</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <atom:link href="//localhost:1313/zh/collection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>样例影片二</title>
+      <link>//localhost:1313/zh/collection/sample-film-two/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/zh/collection/sample-film-two/</guid>
+      <description>&lt;p&gt;一部 1976 年拍摄的简短新闻片——是当时下发给农村流动放映队的典型片目。&lt;/p&gt;&#xA;&lt;h2 id=&#34;来源&#34;&gt;来源&lt;/h2&gt;&#xA;&lt;p&gt;2019 年由一位退休的农村放映员捐赠。&lt;/p&gt;&#xA;&lt;h2 id=&#34;解读说明&#34;&gt;解读说明&lt;/h2&gt;&#xA;&lt;p&gt;这类简短的新闻片通常作为流动放映场次的开场节目。它们流通速度较快，常被保留在放映队片架上反复使用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>样例影片一</title>
+      <link>//localhost:1313/zh/collection/sample-film-one/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/zh/collection/sample-film-one/</guid>
+      <description>&lt;p&gt;一部展示七十年代初期基础设施与农业项目的汇编纪录片。这个样例条目演示了元数据表与正文描述如何在单个藏品页上一同呈现。&lt;/p&gt;&#xA;&lt;h2 id=&#34;来源&#34;&gt;来源&lt;/h2&gt;&#xA;&lt;p&gt;2021 年捐赠入藏。此字段记录胶片来自何处及其保管历史。&lt;/p&gt;&#xA;&lt;h2 id=&#34;解读说明&#34;&gt;解读说明&lt;/h2&gt;&#xA;&lt;p&gt;本节用于简短的学术或策展评论——影片揭示的流通方式、观众群体或历史语境。&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure class=&#34;figure medium&#34;&gt;&#xA;  &lt;img src=&#34;//localhost:1313/images/sample-still.svg&#34; alt=&#34;影片中的一帧静帧。&#34; loading=&#34;lazy&#34;&gt;&#xA;  &lt;figcaption&gt;影片中的一帧静帧。&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;h2 id=&#34;状况&#34;&gt;状况&lt;/h2&gt;&#xA;&lt;p&gt;第一本状况极佳。第二本在大约第 2 分钟处有明显的受热损伤段。片头片尾接片完整。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

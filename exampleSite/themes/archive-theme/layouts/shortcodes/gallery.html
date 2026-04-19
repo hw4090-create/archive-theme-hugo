@@ -1,0 +1,14 @@
+
+<div class="gallery">
+  {{ $lines := split (trim .Inner "\n ") "\n" }}
+  {{ range $lines }}
+    {{ $line := trim . " \t" }}
+    {{ if $line }}
+      {{ $parts := split $line "|" }}
+      {{ $src := index $parts 0 | trim " \t" }}
+      {{ $alt := "" }}
+      {{ if gt (len $parts) 1 }}{{ $alt = index $parts 1 | trim " \t" }}{{ end }}
+      <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy">
+    {{ end }}
+  {{ end }}
+</div>

@@ -1,0 +1,44 @@
+{{/*
+  Video shortcode — embeds a local (self-hosted) video file.
+
+  Usage in Markdown:
+    {{</* video src="/videos/my-film.mp4" */>}}
+    {{</* video src="/videos/my-film.mp4" poster="/images/poster.jpg" */>}}
+    {{</* video src="/videos/my-film.webm" type="video/webm" caption="A short film excerpt" */>}}
+
+  Parameters:
+    src     (required) — video path, typically in /static/videos/
+    poster             — poster image shown before play
+    type               — MIME type, default "video/mp4"
+    caption            — caption shown below the player
+    controls           — "false" to hide controls (default: shown)
+    autoplay           — "true" to autoplay (requires muted)
+    muted              — "true" to mute audio
+    loop               — "true" to loop
+*/}}
+{{ $src := .Get "src" }}
+{{ if not $src }}
+  {{ errorf "video shortcode: 'src' is required (%s)" .Position }}
+{{ end }}
+
+{{ $poster := .Get "poster" }}
+{{ $type := .Get "type" | default "video/mp4" }}
+{{ $caption := .Get "caption" }}
+{{ $controls := ne (.Get "controls") "false" }}
+{{ $autoplay := eq (.Get "autoplay") "true" }}
+{{ $muted := eq (.Get "muted") "true" }}
+{{ $loop := eq (.Get "loop") "true" }}
+
+<figure class="video">
+  <video
+    {{ if $controls }}controls{{ end }}
+    {{ if $autoplay }}autoplay{{ end }}
+    {{ if $muted }}muted{{ end }}
+    {{ if $loop }}loop{{ end }}
+    {{ with $poster }}poster="{{ . | relURL }}"{{ end }}
+    preload="metadata">
+    <source src="{{ $src | relURL }}" type="{{ $type }}">
+    Your browser does not support embedded video.
+  </video>
+  {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

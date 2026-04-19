@@ -1,0 +1,36 @@
+[footer_tagline]
+other = "双语档案展览"
+
+[recent_additions]
+other = "最新收录"
+
+[video_unsupported]
+other = "您的浏览器不支持嵌入式视频。"
+
+# 藏品元数据标签
+[meta_year]
+other = "年代"
+
+[meta_genre]
+other = "类型"
+
+[meta_gauge]
+other = "规格"
+
+[meta_format]
+other = "格式"
+
+[meta_color]
+other = "彩色信息"
+
+[meta_sound]
+other = "声音"
+
+[meta_duration]
+other = "时长"
+
+[meta_condition]
+other = "保存状态"
+
+[meta_access]
+other = "访问方式"

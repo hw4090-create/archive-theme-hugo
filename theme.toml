@@ -1,0 +1,10 @@
+name = "archive-theme"
+license = "MIT"
+description = "A bilingual Hugo theme for film and video archive exhibitions. Image-banner header in the Ananke tradition, local video playback, content-first."
+tags = ["archive", "bilingual", "film", "video", "exhibition", "minimal", "ananke"]
+features = ["bilingual", "config-driven", "language-toggle", "image-banner", "local-video", "markdown-driven"]
+min_version = "0.128.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://github.com/yourname/archive-theme"

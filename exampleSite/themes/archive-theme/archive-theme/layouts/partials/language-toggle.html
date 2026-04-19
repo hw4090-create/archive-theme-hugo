@@ -1,0 +1,36 @@
+{{/*
+  Language toggle. Shows "EN / 中文" with the current language highlighted
+  and other languages linking to their translation of the current page.
+  If no translation exists, link to the home page of that language.
+*/}}
+{{ if gt (len site.Languages) 1 }}
+<div class="lang-toggle">
+  {{ $page := . }}
+  {{ range $i, $lang := site.Languages }}
+    {{ if gt $i 0 }}<span class="sep">/</span>{{ end }}
+    {{ if eq $lang.Lang $page.Lang }}
+      <span class="current">{{ $lang.LanguageName | default $lang.Lang }}</span>
+    {{ else }}
+      {{/* Find this page in the target language */}}
+      {{ $href := "" }}
+      {{ range $page.AllTranslations }}
+        {{ if eq .Lang $lang.Lang }}{{ $href = .RelPermalink }}{{ end }}
+      {{ end }}
+      {{/* Fallback: the target language's home */}}
+      {{ if not $href }}
+        {{ with site.Home.AllTranslations }}
+          {{ range . }}
+            {{ if eq .Lang $lang.Lang }}{{ $href = .RelPermalink }}{{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if $href }}
+        <a href="{{ $href }}" hreflang="{{ $lang.Lang }}">{{ $lang.LanguageName | default $lang.Lang }}</a>
+      {{ else }}
+        {{/* No translation + no home translation: render non-linked label */}}
+        <span class="unavailable">{{ $lang.LanguageName | default $lang.Lang }}</span>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

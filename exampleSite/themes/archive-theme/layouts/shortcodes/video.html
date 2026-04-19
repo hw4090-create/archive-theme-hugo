@@ -1,0 +1,18 @@
+{{ $src := .Get "src" }}
+{{ $poster := .Get "poster" }}
+{{ $autoplay := .Get "autoplay" | default "false" }}
+{{ $loop := .Get "loop" | default "false" }}
+{{ $muted := .Get "muted" | default "false" }}
+{{ $controls := .Get "controls" | default "true" }}
+
+<video
+  {{ if $poster }}poster="{{ $poster | relURL }}"{{ end }}
+  {{ if eq $controls "true" }}controls{{ end }}
+  {{ if eq $autoplay "true" }}autoplay{{ end }}
+  {{ if eq $loop "true" }}loop{{ end }}
+  {{ if eq $muted "true" }}muted{{ end }}
+  playsinline
+>
+  <source src="{{ $src | relURL }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>

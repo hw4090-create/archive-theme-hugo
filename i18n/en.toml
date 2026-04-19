@@ -1,0 +1,36 @@
+[footer_tagline]
+other = "A bilingual archive exhibition"
+
+[recent_additions]
+other = "Recent additions"
+
+[video_unsupported]
+other = "Your browser does not support embedded video."
+
+# Collection metadata labels
+[meta_year]
+other = "Year"
+
+[meta_genre]
+other = "Genre"
+
+[meta_gauge]
+other = "Gauge"
+
+[meta_format]
+other = "Format"
+
+[meta_color]
+other = "Color"
+
+[meta_sound]
+other = "Sound"
+
+[meta_duration]
+other = "Duration"
+
+[meta_condition]
+other = "Condition"
+
+[meta_access]
+other = "Access"
