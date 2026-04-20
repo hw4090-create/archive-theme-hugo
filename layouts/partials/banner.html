@@ -1,0 +1,54 @@
+{{/*
+  Banner (the big header block).
+  Background image priority:
+    1. Page's own front-matter:  banner_image: "/images/x.jpg"
+    2. Site param default:        [params] banner_image = "/images/default.jpg"
+    3. Fallback solid color       (--banner-fallback-bg in CSS)
+  Title: page's .Title  (override with front-matter banner_title)
+  Subtitle: page's front-matter banner_subtitle
+*/}}
+{{ $bannerImage := .Params.banner_image | default site.Params.banner_image }}
+{{ $bannerStyle := "" }}
+{{ with $bannerImage }}
+  {{ $bannerStyle = printf `background-image: url("%s");` (. | relURL) }}
+{{ end }}
+
+<header class="banner" {{ with $bannerStyle }}style="{{ . | safeCSS }}"{{ end }}>
+  <div class="banner-inner">
+
+    <nav class="banner-nav">
+      <a href="{{ "/" | relLangURL }}" class="brand">{{ site.Title }}</a>
+
+      <div class="banner-nav-right">
+        <ul class="nav-links">
+          {{ range site.Menus.main }}
+            {{/* Hugo auto-populates .Page when pageRef is used in menu config */}}
+            {{ $url := "" }}
+            {{ if .Page }}
+              {{ $url = .Page.RelPermalink }}
+            {{ else }}
+              {{ $url = .URL | relLangURL }}
+            {{ end }}
+            {{ $active := false }}
+            {{ if $url }}
+              {{ if eq $.RelPermalink $url }}
+                {{ $active = true }}
+              {{ end }}
+            {{ end }}
+            <li><a href="{{ $url }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+
+        {{ partial "language-toggle.html" . }}
+      </div>
+    </nav>
+
+    {{ $bannerTitle := .Params.banner_title | default .Title }}
+    {{ if .IsHome }}{{ $bannerTitle = .Params.banner_title | default site.Title }}{{ end }}
+    <h1 class="banner-title">{{ $bannerTitle }}</h1>
+    {{ with .Params.banner_subtitle }}
+      <p class="banner-subtitle">{{ . }}</p>
+    {{ end }}
+
+  </div>
+</header>
