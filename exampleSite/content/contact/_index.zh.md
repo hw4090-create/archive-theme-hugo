@@ -22,4 +22,4 @@ banner_subtitle: "与项目团队联系。"
 
 ## 鸣谢
 
-本站基于 [Hugo](https://gohugo.io) 与开源的 [archive-theme](https://github.com/yourname/archive-theme) 构建。
+本站基于 [Hugo](https://gohugo.io)
