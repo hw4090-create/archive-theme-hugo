@@ -448,7 +448,7 @@ MIT — see [LICENSE](./LICENSE). Free to use, modify, and redistribute.
 
 ## Contributing
 
-Issues and pull requests welcome at [github.com/yourname/archive-theme](https://github.com/hw4090-create/archive-theme-hugo).
+Issues and pull requests welcome at [github.com/hw4090-create/archive-theme-hugo](https://github.com/hw4090-create/archive-theme-hugo).
 
 ## Author contact
 Email: haoran020513@gmail.com
