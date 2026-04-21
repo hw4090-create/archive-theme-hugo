@@ -22,4 +22,4 @@ We accept donations of prints and related equipment. Please write first so we ca
 
 ## Credits
 
-This site is built with [Hugo](https://gohugo.io) and the open-source [archive-theme](https://github.com/yourname/archive-theme).
+This site is built with [Hugo](https://gohugo.io) and the open-source [archive-theme]([https://github.com/yourname/archive-theme](https://github.com/hw4090-create/archive-theme-hugo)).
